@@ -21,5 +21,15 @@ namespace RecetarioBechiKminos
         {
 
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Modificar_button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

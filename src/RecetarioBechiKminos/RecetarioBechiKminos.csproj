@@ -47,19 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controlador.cs" />
-    <Compile Include="D:\PC3\6to C\Caminos\Program\Recetas22\Form1.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
-      <Link>Form1.cs</Link>
     </Compile>
-    <Compile Include="D:\PC3\6to C\Caminos\Program\Recetas22\Form1.Designer.cs">
+    <Compile Include="Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-      <Link>Form1.Designer.cs</Link>
     </Compile>
+    <Compile Include="Ingrediente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="D:\PC3\6to C\Caminos\Program\Recetas22\Form1.resx">
+    <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-      <Link>Form1.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -69,6 +67,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -82,6 +81,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indexx.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indexxx.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

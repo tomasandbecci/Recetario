@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace RecetarioBechiKminos
 {
-    class controlador
+    public class Controlador
     {
-        
+        public void AgregarReceta(string Nombre, int Cantidad, int Precio, int PuntoDePedido)
+        {
+            Ingrediente ingrediente = new Ingrediente()
+            {
+                Nombre = Nombre,
+                Cantidad = Cantidad,
+                Precio = Precio,
+                PuntoDePedido = PuntoDePedido,
+            };
+        }
+
     }
 }
