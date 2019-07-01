@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecetarioBechiKminos", "RecetarioBechiKminos\RecetarioBechiKminos.csproj", "{62D1AE66-86D0-4FD8-81CC-9A4EE5E8F468}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62D1AE66-86D0-4FD8-81CC-9A4EE5E8F468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D1AE66-86D0-4FD8-81CC-9A4EE5E8F468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D1AE66-86D0-4FD8-81CC-9A4EE5E8F468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D1AE66-86D0-4FD8-81CC-9A4EE5E8F468}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C809C03A-D1C9-4FA7-8716-EC7073C31B64}
+	EndGlobalSection
+EndGlobal
