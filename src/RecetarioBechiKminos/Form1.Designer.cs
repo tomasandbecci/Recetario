@@ -36,15 +36,12 @@
             this.Receta_ListBox = new System.Windows.Forms.ListBox();
             this.RecetaIngrediente_ListBox = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cantidad_textBox = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.precio_textBox = new System.Windows.Forms.TextBox();
+            this.nombre_textBox = new System.Windows.Forms.TextBox();
+            this.puntodepedido_textBox = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +57,7 @@
             this.Agregar_button7 = new System.Windows.Forms.Button();
             this.Agregar_button4 = new System.Windows.Forms.Button();
             this.Eliminar_button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Modificar_button2
@@ -70,6 +68,7 @@
             this.Modificar_button2.TabIndex = 1;
             this.Modificar_button2.Text = "Modificar";
             this.Modificar_button2.UseVisualStyleBackColor = true;
+            this.Modificar_button2.Click += new System.EventHandler(this.Modificar_button2_Click);
             // 
             // Comprarbutton3
             // 
@@ -100,11 +99,13 @@
             // 
             // Ingrediente_ListBox
             // 
+            this.Ingrediente_ListBox.DisplayMember = "Ingrediente.Nombre";
             this.Ingrediente_ListBox.FormattingEnabled = true;
             this.Ingrediente_ListBox.Location = new System.Drawing.Point(217, 229);
             this.Ingrediente_ListBox.Name = "Ingrediente_ListBox";
             this.Ingrediente_ListBox.Size = new System.Drawing.Size(156, 121);
             this.Ingrediente_ListBox.TabIndex = 11;
+            this.Ingrediente_ListBox.SelectedIndexChanged += new System.EventHandler(this.Ingrediente_ListBox_SelectedIndexChanged);
             // 
             // Receta_ListBox
             // 
@@ -129,19 +130,12 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 14;
             // 
-            // textBox2
+            // cantidad_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 264);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 15;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(108, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 16;
+            this.cantidad_textBox.Location = new System.Drawing.Point(108, 264);
+            this.cantidad_textBox.Name = "cantidad_textBox";
+            this.cantidad_textBox.Size = new System.Drawing.Size(100, 20);
+            this.cantidad_textBox.TabIndex = 15;
             // 
             // textBox4
             // 
@@ -150,26 +144,26 @@
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 17;
             // 
-            // textBox5
+            // precio_textBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(108, 300);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 21;
+            this.precio_textBox.Location = new System.Drawing.Point(108, 300);
+            this.precio_textBox.Name = "precio_textBox";
+            this.precio_textBox.Size = new System.Drawing.Size(100, 20);
+            this.precio_textBox.TabIndex = 21;
             // 
-            // textBox6
+            // nombre_textBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(108, 229);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 20;
+            this.nombre_textBox.Location = new System.Drawing.Point(108, 229);
+            this.nombre_textBox.Name = "nombre_textBox";
+            this.nombre_textBox.Size = new System.Drawing.Size(100, 20);
+            this.nombre_textBox.TabIndex = 20;
             // 
-            // textBox8
+            // puntodepedido_textBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(108, 330);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 18;
+            this.puntodepedido_textBox.Location = new System.Drawing.Point(108, 330);
+            this.puntodepedido_textBox.Name = "puntodepedido_textBox";
+            this.puntodepedido_textBox.Size = new System.Drawing.Size(100, 20);
+            this.puntodepedido_textBox.TabIndex = 18;
             // 
             // textBox9
             // 
@@ -177,22 +171,6 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 25;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(462, 126);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Ingredientes";
             // 
             // label2
             // 
@@ -247,7 +225,6 @@
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 31;
             this.label7.Text = "Cantidad";
-            this.label7.Click += new System.EventHandler(this.Label7_Click);
             // 
             // label8
             // 
@@ -303,7 +280,6 @@
             this.Modificar_button6.TabIndex = 6;
             this.Modificar_button6.Text = "Modificar";
             this.Modificar_button6.UseVisualStyleBackColor = true;
-            this.Modificar_button6.Click += new System.EventHandler(this.Modificar_button6_Click);
             // 
             // Agregar_button7
             // 
@@ -314,7 +290,6 @@
             this.Agregar_button7.TabIndex = 5;
             this.Agregar_button7.Text = "Agregar";
             this.Agregar_button7.UseVisualStyleBackColor = true;
-            this.Agregar_button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // Agregar_button4
             // 
@@ -325,6 +300,7 @@
             this.Agregar_button4.TabIndex = 3;
             this.Agregar_button4.Text = "Agregar";
             this.Agregar_button4.UseVisualStyleBackColor = true;
+            this.Agregar_button4.Click += new System.EventHandler(this.Agregar_button4_Click);
             // 
             // Eliminar_button1
             // 
@@ -334,12 +310,22 @@
             this.Eliminar_button1.TabIndex = 0;
             this.Eliminar_button1.Text = "Eliminar";
             this.Eliminar_button1.UseVisualStyleBackColor = true;
+            this.Eliminar_button1.Click += new System.EventHandler(this.Eliminar_button1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(465, 126);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(97, 21);
+            this.comboBox1.TabIndex = 35;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 463);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -348,15 +334,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.precio_textBox);
+            this.Controls.Add(this.nombre_textBox);
+            this.Controls.Add(this.puntodepedido_textBox);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cantidad_textBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.RecetaIngrediente_ListBox);
             this.Controls.Add(this.Receta_ListBox);
@@ -396,15 +379,12 @@
         private System.Windows.Forms.ListBox Receta_ListBox;
         private System.Windows.Forms.ListBox RecetaIngrediente_ListBox;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox cantidad_textBox;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox precio_textBox;
+        private System.Windows.Forms.TextBox nombre_textBox;
+        private System.Windows.Forms.TextBox puntodepedido_textBox;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -413,6 +393,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

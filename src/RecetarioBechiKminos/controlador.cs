@@ -6,18 +6,36 @@ using System.Threading.Tasks;
 
 namespace RecetarioBechiKminos
 {
-    public class Controlador
+    public static class Controlador
     {
-        public void AgregarReceta(string Nombre, int Cantidad, int Precio, int PuntoDePedido)
+        public static List<Ingrediente> ListaIngredientes { get; }
+
+        static Controlador()
+        {
+            ListaIngredientes = new List<Ingrediente>();
+        }
+
+        public static void Agregar (string nombre, int cantidad, int precio, int puntodepedido)
         {
             Ingrediente ingrediente = new Ingrediente()
             {
-                Nombre = Nombre,
-                Cantidad = Cantidad,
-                Precio = Precio,
-                PuntoDePedido = PuntoDePedido,
+                Nombre = nombre,
+                Cantidad = cantidad,
+                Precio = precio,
+                PuntoDePedido = puntodepedido
             };
+            ListaIngredientes.Add(ingrediente);
         }
-
+        public static void Borrar(Ingrediente ingrediente)
+        {
+            ListaIngredientes.Remove(ingrediente);
+        }
+        public static void Modificar(Ingrediente ingrediente,string nombre, int cantidad, int precio, int puntodepedido)
+        {
+            ingrediente.Nombre = nombre;
+            ingrediente.Cantidad = cantidad;
+            ingrediente.Precio = precio;
+            ingrediente.PuntoDePedido = puntodepedido;
+        }
     }
 }
