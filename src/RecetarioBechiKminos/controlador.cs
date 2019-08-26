@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,17 +27,37 @@ namespace RecetarioBechiKminos
                 PuntoDePedido = puntodepedido
             };
             ListaIngredientes.Add(ingrediente);
+            Guardar();
         }
         public static void Borrar(Ingrediente ingrediente)
         {
             ListaIngredientes.Remove(ingrediente);
+            Guardar();
         }
+
         public static void Modificar(Ingrediente ingrediente,string nombre, int cantidad, int precio, int puntodepedido)
         {
             ingrediente.Nombre = nombre;
             ingrediente.Cantidad = cantidad;
             ingrediente.Precio = precio;
             ingrediente.PuntoDePedido = puntodepedido;
+            Guardar();
+        }
+        private static void Guardar()
+        {
+            using (StreamWriter escritor = new StreamWriter("Ingredientes.json"))
+            {
+                string ingredientesJSON = JsonConvert.SerializeObject(ListaIngredientes);
+                escritor.Write(ingredientesJSON);
+            }
+        }
+        private static void Cargar()
+        {
+            using (StreamReader lector = new StreamReader("Ingredientes.json"))
+            {
+                lector.Read();
+                JsonConvert.DeserializeObject();
+            }
         }
     }
 }
