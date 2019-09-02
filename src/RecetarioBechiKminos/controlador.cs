@@ -53,10 +53,13 @@ namespace RecetarioBechiKminos
         }
         private static void Cargar()
         {
-            using (StreamReader lector = new StreamReader("Ingredientes.json"))
+            if (File.Exists("Ingredientes.json"))
             {
-                lector.Read();
-                JsonConvert.DeserializeObject();
+                using (StreamReader lector = new StreamReader("Ingredientes.json"))
+                {
+                    string ingredientesJSON = lector.ReadToEnd();
+                    ListaIngredientes = JsonConvert.DeserializeObject<IList<ingrediente>>(ingredientesJSON);
+                }
             }
         }
     }
